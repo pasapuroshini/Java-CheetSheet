@@ -109,10 +109,18 @@ Other name for static variable is `class variable` and for static method is `cla
 
 ## Difference between class variables and instance variables:
 1.An instance variable is a variable whose separate copy is available to each object. A class variable is a variable whose single copy is available  in memory shared by all the objects.
+
 2. Instance variables are created in the objects on heap memory.Class variables are stored on method area.
-3a.Since the instance variable will have a separate copy in each object,when the value of an instance variable is modified in the object ,it does not affect the instance variables in other objects .
+
+3a.Since the instance variable will have a separate copy in each object,when the value of an instance variable is modified in the object ,it does not affect the instance variables in 
+
+other objects .
+
 3b.Since a class variable have only one copy in memory and that is shared by all the objects ,any modification to it will also affect other objects.
-4.the execution sequence of JVM is the process where JVM executes first all the static blocks of the java program. Then it executes static methods and then creates any objects needed by the program . finally  it executes the instance methods.
+
+4.the execution sequence of JVM is the process where JVM executes first all the static blocks of the java program. Then it executes static methods and then creates any objects needed by 
+
+the program . finally  it executes the instance methods.
 
 
 
