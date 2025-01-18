@@ -122,7 +122,118 @@ other objects .
 
 the program . finally  it executes the instance methods.
 
+# Static Block:
+A static block is a block of statements declared as `static` 
+```
+static{
+statements
+}
+```
+static - highest priority for JVM.
+```
+class StaticBlockExample {
+    // Static variable
+    private static int staticVar;
+
+    // Static block to initialize static variables
+    static {
+        System.out.println("Static block is executed.");
+        staticVar = 42; // Initializing the static variable
+    }
+
+    // Static method to display the static variable
+    public static void displayStaticVar() {
+        System.out.println("Static variable value: " + staticVar);
+    }
+
+    // Constructor (just for demonstration)
+    public StaticBlockExample() {
+        System.out.println("Constructor is executed.");
+    }
+}
+
+public class Main {
+    public static void main(String[] args) {
+        System.out.println("Main method starts.");
+        
+        // Access the static method to display the static variable
+        StaticBlockExample.displayStaticVar();
+        
+        // Create an object of the class
+        StaticBlockExample obj = new StaticBlockExample();
+
+        System.out.println("Main method ends.");
+    }
+}
+```
+Output:
+```
+Static block is executed.
+Main method starts.
+Static variable value: 42
+Constructor is executed.
+Main method ends.
+```
+### Program Without main() Method (Compiles but Errors at Runtime)
+```
+class NoMainMethod {
+    static {
+        System.out.println("Static block executed.");
+    }
+
+    // No main() method
+}
+```
+
+```
+Error: Main method not found in class NoMainMethod, please define the main method as:
+   public static void main(String[] args)
+```
+
+### Program Without a main() Method That Compiles and Runs:
+```
+class WithoutMain {
+    static {
+        System.out.println("Static block executed.");
+        System.exit(0); // Terminate the program
+    }
+}
+```
+```
+Static block executed.
+
+```
+
+***Is it possible to run a java program without main method?***
+Yes,its possible by using static block in java program.
 
 
+## Local Variables:
+ A local variableis a variable that is declared locally inside a method or constructor and is available only within the method or constructor.
 
 
+ ### This keyword:
+ refers to object of present class.
+ `this ` can refer to all the thigs of the present object.
+ Generally we write instance variables ,cosntructors and methods in a class.All these members referenced as `this`.
+
+```
+void modify(int x)
+{
+x=x;//both the x refer to local variables
+}
+```
+```
+void modify(int x)
+{
+this.x= x; //store local variable x into present class instance variable x
+}
+```
+### Instance Methods:
+ Can access both the instance variables and static variables.
+ two types of instance methods:
+ 1. Accessor methods
+2. Mutator methods
+
+Accessor (Getter): A method that retrieves the value of a private instance variable without modifying it.( access only)
+Mutator (Setter): A method that updates or modifies the value of a private instance variable.( access+ modify)
