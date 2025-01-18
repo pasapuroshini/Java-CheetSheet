@@ -237,3 +237,36 @@ this.x= x; //store local variable x into present class instance variable x
 
 Accessor (Getter): A method that retrieves the value of a private instance variable without modifying it.( access only)
 Mutator (Setter): A method that updates or modifies the value of a private instance variable.( access+ modify)
+
+```
+class Person {
+    // Private instance variable
+    private String name;
+
+    // Accessor (getter) to retrieve the value of the name
+    public String getName() {
+        return name;
+    }
+
+    // Mutator (setter) to set or modify the value of the name
+    public void setName(String name) {
+        this.name = name;
+    }
+}
+
+public class Main {
+    public static void main(String[] args) {
+        // Create an object of the Person class
+        Person person = new Person();
+
+        // Use the setter to set the name
+        person.setName("Alice");
+
+        // Use the getter to get and display the name
+        System.out.println("Name: " + person.getName());
+    }
+}
+```
+``
+Name: Alice
+``
