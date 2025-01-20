@@ -270,3 +270,12 @@ public class Main {
 ``
 Name: Alice
 ``
+
+
+
+
+## Primitive Data Types to Methods:
+primitive data types or fundamental data types represent single entities or single values.
+they are passed to methods by value.
+This means when we pass primitive data types to methods, a copy of those will be passed to methods therefore any changes made to them inside the methods will not be affect them outside methods.
+Even objects are passed to methods by value.
